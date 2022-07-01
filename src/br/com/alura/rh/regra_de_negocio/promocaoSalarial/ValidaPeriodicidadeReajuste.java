@@ -1,4 +1,4 @@
-package br.com.alura.rh.regra_de_negocio;
+package br.com.alura.rh.regra_de_negocio.promocaoSalarial;
 
 import br.com.alura.rh.ValidacaoException;
 import br.com.alura.rh.model.Funcionario;
