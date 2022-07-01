@@ -4,44 +4,20 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
-public class Funcionario {
+public class Funcionario extends Pessoa{
 
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
+
 	private LocalDate dataUltimoReajuste ;
 
 	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+		super(nome, cpf, cargo, salario);
+
 	}
 
 	public void recebeReajuste(BigDecimal aumento) {
 
-		this.salario = aumento;
+		super.setSalario(aumento);
 		this.dataUltimoReajuste = LocalDate.now();
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-
-	public Cargo getCargo() {
-		return cargo;
-	}
-
-
-
-	public BigDecimal getSalario() {
-		return salario;
 	}
 
 
@@ -52,6 +28,6 @@ public class Funcionario {
 
 
 	public void promover(Cargo novoCargo) {
-		this.cargo = novoCargo;
+		super.setCargo(novoCargo);
 	}
 }
